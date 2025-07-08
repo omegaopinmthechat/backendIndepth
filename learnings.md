@@ -3,6 +3,7 @@
 2) npm install --save-dev nodemon
 3) npx eslint --init
 4) npm install dotenv
+5) npm install mongodb mongoose
 
 # miscellaneous:
 JWT: Jason web token
