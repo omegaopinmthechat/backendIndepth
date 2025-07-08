@@ -4,9 +4,13 @@
 3) npx eslint --init
 4) npm install dotenv
 5) npm install mongodb mongoose
+6) npm install jsonwebtoken bcryptjs
 
 # miscellaneous:
-JWT: Jason web token
+
+bcryptjs: hash password
+
+JWT: Jason web token, making custom auth
 
 upstash: Upstash is a serverless data platform designed for developers building modern, distributed, and serverless applications 
 (for email reminder)
