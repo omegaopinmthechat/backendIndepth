@@ -50,16 +50,15 @@ const subSchema = new mongoose.Schema(
     },
     renewalDate: {
       type: Date,
-      required: true,
       validate: {
         validator: function (value) {
-          return value > this.startDate();
+          return !value || value > this.startDate;
         },
         message: "Renewal date must be after the start datet",
       },
     },
     user: {
-      type: mongoose.Schema.types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
       index: true, //indexes each user
@@ -72,7 +71,7 @@ const subSchema = new mongoose.Schema(
 subSchema.pre("save", function (next) {
   if (!this.renewalDate) {
     const renewalPeriods = {
-      daile: 1,
+      daily: 1,
       weekly: 7,
       monthly: 30,
       yearly: 365,
@@ -88,5 +87,5 @@ subSchema.pre("save", function (next) {
   next();
 });
 
-const Subcription = mongoose.model("Subscription", subSchema);
-export default Subcription;
+const Subscription = mongoose.model("Subscription", subSchema);
+export default Subscription;
