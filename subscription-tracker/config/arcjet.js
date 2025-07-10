@@ -1,3 +1,4 @@
+//Arcjet config copied from the official documentation
 import arcjet, { shield, detectBot, tokenBucket } from "@arcjet/node";
 import { ARCJET_KEY } from "./env.js";
 
