@@ -1,7 +1,9 @@
+//as of now every routes file has its own controller file
 import { Router } from 'express';
+import { sendRedminders } from '../controllers/workflow.controller.js';
 
 const workflowRouter = Router();
 
-workflowRouter.get('/', (req,res)=>{res.json({ message: "Work flow router"})});
+workflowRouter.post('/subscription/reminder', sendRedminders);
 
 export default workflowRouter;

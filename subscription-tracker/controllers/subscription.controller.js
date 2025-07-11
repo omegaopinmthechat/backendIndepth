@@ -1,4 +1,6 @@
 import Subscription from "../models/subscriptions.model.js";
+import { workflowClient } from '../config/upstash.js';
+import { SERVER_URL } from "../config/env.js";
 
 export const createSubscription = async (req, res, next) =>{
     try{
@@ -6,6 +8,12 @@ export const createSubscription = async (req, res, next) =>{
             ...req.body, //everything the user passes into this call
             user: req.user._id,
         });
+
+        //adding the workflow
+        await workflowClient.trigger({
+            url: `${SERVER_URL}`
+        })
+
         res.status(201).json({ success: true, data: subscription });
     }catch(error){
         next(error);
