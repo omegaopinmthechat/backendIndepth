@@ -10,12 +10,12 @@ import arcjetMiddleware from './middlewares/arcjet.middleware.js';
 import workflowRouter from './routes/workflow.routes.js';
 
 
-// ✅ What next() Does
+//  What next() Does
 // In Express, next() is a function that tells Express to:
 
 // “Move on to the next middleware or route handler in the chain.”
 
-// 🔁 So when you call next(), you’re saying:
+//  So when you call next(), you’re saying:
 // “I’m done with my job. Let the next function handle the rest.”
 
 // example of next:
