@@ -18,7 +18,7 @@ const subSchema = new mongoose.Schema(
     },
     currency: {
       type: String,
-      enum: ["USD", "EUR", "GBP"], //avaiable currency
+      enum: ["USD", "EUR", "GBP", "INR"], //avaiable currency
       default: "USD",
     },
     frequency: {
